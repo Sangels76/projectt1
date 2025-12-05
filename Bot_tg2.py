@@ -74,7 +74,7 @@ def take_money(message):
         history.append(f"Снято: {amount} руб.")
         bot.send_message(message.chat.id, f"Снято {amount} руб.", reply_markup=kb)
     else:
-        bot.send_message(message.chat.id, f"Не хватает денег!, на счете только {balance} руб.",
+        bot.send_message(message.chat.id, f"Не хватает денег!\nНа счете только {balance} руб.",
                          reply_markup=kb)
 
 
