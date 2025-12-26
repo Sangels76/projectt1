@@ -19,7 +19,7 @@ def register_user():
     print("Добро пожаловать в меню регистрации!")
     login = input("Введите логин:")
     password = input("Введите пароль:")
-    balance = round(random.uniform(100, 10000))
+    balance = round(random.uniform(1000, 10000))
 
     cursor.execute("""
             INSERT INTO users (login, password, balance)
