@@ -20,19 +20,14 @@ def register_user():
     login = input("Введите логин:")
     password = input("Введите пароль:")
     balance = round(random.uniform(100, 10000))
-    try:
-        cursor.execute("""
-        INSERT INTO users (login, password, balance)
-        VALUES (?,?,?)""", (login,password,balance)
-                       )
-        conn.commit()
-        print(f"Пользователь {login} успешно зарегистрирован!\n"
-              f"Ваш баланс: {balance}\n")
 
-    except sqlite3.IntegrityError:
-        print(f"Ошибка. Такой пользователь уже существует.")
-
-
+    cursor.execute("""
+            INSERT INTO users (login, password, balance)
+            VALUES (?,?,?)""", (login, password, balance)
+                   )
+    conn.commit()
+    print(f"Пользователь {login} успешно зарегистрирован!\n"
+          f"Ваш баланс: {balance}\n")
 
 
 register_user()
