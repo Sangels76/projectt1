@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
     login VARCHAR(50),
     password TEXT,
-    balance INTEGER(7)
+    balance INTEGER(6)
 )
 """)
 
